@@ -1,17 +1,17 @@
 # Churn Prediction with SageMaker Pipelines
 
-Project created by Jeffrey Dick in May 2025.
+ML engineering bootcamp mini-project prepared by Jeffrey Dick in May 2025.
 
 There are two sources for this project:
 
 - The AWS blog post [Build, tune, and deploy an end-to-end churn prediction model using Amazon SageMaker Pipelines](https://aws.amazon.com/blogs/machine-learning/build-tune-and-deploy-an-end-to-end-churn-prediction-model-using-amazon-sagemaker-pipelines/).
 - The AWS sample code in [this GitHub repository](https://github.com/aws-samples/customer-churn-sagemaker-pipelines-sample)
 
-While creating this project I identified and solved SageMaker errors that were not obvious from the blog post or sample code.
-Dealing with two main issues upfront can save you some time:
+While working on this project I identified and solved SageMaker errors that were not obvious from the blog post or sample code.
+Dealing with two issues upfront can save some time:
 
-- Your account needs a minimum quota of 2 instances for "ml.m4.xlarge for training job usage"
-    - If you don't have it already, navigate to Service Quotas > AWS services > Amazon Sagemaker in the AWS console to make a quota request
+- The AWS account needs a minimum quota of 2 instances for "ml.m4.xlarge for training job usage"
+    - Navigate to Service Quotas > AWS services > Amazon Sagemaker in the AWS console to make a quota request
 	- This can take more than 48 hours to get approved
 - Creating a project in SageMaker Studio does not provide enough permissions by default
     - Get the correct permissions by attaching the `AmazonS3FullAccess` and `AmazonSageMakerFullAccess` policies to the SageMaker execution role (i.e., the project role ARN that appears after creating the project in SageMaker Studio)
@@ -19,7 +19,7 @@ Dealing with two main issues upfront can save you some time:
 Costs: My AWS account was charged about $6 during the iterations and debugging of this project.
 I expect the cost would be lower if each notebook was run only once, but YMMV.
 
-## Introduction
+## Background
 
 - Predicting whether a customer stops paying (or churns) is an important ability for businesses
 - The analytics workflow involves data preparation, experimenting with baseline models, hyperparameter optimization, and model registration
