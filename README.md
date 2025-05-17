@@ -214,7 +214,7 @@ Follow these additional data preparation steps before running the notebook:
 
 ### Step 5: Get the pipeline instance
 
-- This instantiates the pipeline usingi code in `pipeline.py`
+- This instantiates the pipeline using code in `pipeline.py`
 
 ### Step 6: Submit the pipeline to SageMaker and start execution
 
@@ -315,3 +315,14 @@ Here are metrics showing the model performance.
     </tr>
   </tbody>
 </table>
+
+## Cleanup
+
+Additional steps are needed to avoid charges after you are finished with the project.
+Even without interacting with any notebooks, my daily charges were about $1.08 for EC2, $0.10 for VPC, and $0.06 for SageMaker.
+These are the steps I took to stop all charges:
+
+- Deleted the project in SageMaker Unified Studio
+- Deleted the SageMaker domain
+- Removed other services created during SageMaker domain creation
+  - These included VPC and its dependencies, elastic IP address, and S3 buckets
